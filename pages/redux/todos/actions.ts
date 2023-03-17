@@ -10,14 +10,14 @@ import {
 export const added = (todoText: string) => {
   return {
     type: ADDED,
-    payload: todoText,
+    payload: { todoText: todoText },
   };
 };
 
 export const toggled = (todoId: number) => {
   return {
     type: TOGGLED,
-    payload: todoId,
+    payload: { todoId: todoId },
   };
 };
 
@@ -34,7 +34,7 @@ export const colorSelected = (todoId: number, color: string) => {
 export const deleted = (todoId: number) => {
   return {
     type: DELETED,
-    payload: todoId,
+    payload: { todoId: todoId },
   };
 };
 
