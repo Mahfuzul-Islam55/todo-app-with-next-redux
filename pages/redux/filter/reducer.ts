@@ -1,7 +1,8 @@
 import { COLORCHANGED, STATUSCHANGED } from "./actionTypes";
-import { IAction, IInitialState } from "./types";
+import initialState from "./initialState";
+import { IAction } from "./types";
 
-const reducer = (state: IInitialState, action: IAction) => {
+const filterReducer = (state = initialState, action: IAction) => {
   const { type, payload } = action;
   switch (type) {
     case STATUSCHANGED:
@@ -31,3 +32,5 @@ const reducer = (state: IInitialState, action: IAction) => {
       return state;
   }
 };
+
+export default filterReducer;

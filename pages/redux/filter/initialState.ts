@@ -1,7 +1,9 @@
 import { IInitialState } from "./types";
 
-export const initialState: IInitialState = {
+const initialState: IInitialState = {
   status: "All",
   colors: [],
   changeType: false,
 };
+
+export default initialState;

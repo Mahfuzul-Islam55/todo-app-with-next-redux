@@ -17,7 +17,7 @@ const nextTodoId = (todos: Array<Object>) => {
 
   return maxId + 1;
 };
-const reducer = (state = initialState, action: IAction) => {
+const todoReducer = (state = initialState, action: IAction) => {
   const { payload, type } = action;
   if (type === ADDED) {
     return [
@@ -62,4 +62,4 @@ const reducer = (state = initialState, action: IAction) => {
   }
 };
 
-export default reducer;
+export default todoReducer;
