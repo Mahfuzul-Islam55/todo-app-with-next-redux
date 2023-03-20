@@ -10,7 +10,7 @@ export const colorChanged = (color: string, changeType: boolean) => {
   };
 };
 
-export const statusChanged = (status: boolean) => {
+export const statusChanged = (status: string) => {
   return {
     type: STATUSCHANGED,
     payload: {
