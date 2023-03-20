@@ -10,9 +10,8 @@ const Footer = () => {
   const dispatch = useDispatch();
 
   const { status, colors, changeType } = filters;
-
   const todosRemaining = todos.filter(
-    (todo: IInitialState) => !todo.completed
+    (todo: IInitialState) => !todo.isComplete
   ).length;
 
   const numberOfTodos = (todosRemaining: number) => {

@@ -13,4 +13,5 @@ export interface IInitialState {
   text?: string;
   completed?: boolean;
   color?: string;
+  isComplete?: boolean;
 }

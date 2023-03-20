@@ -34,6 +34,7 @@ const todoReducer = (state = initialState, action: IAction) => {
       return {
         ...todo,
         completed: !todo.completed,
+        isComplete: !todo.isComplete,
       };
     });
   } else if (type === COLORSELECTED) {
