@@ -24,6 +24,9 @@ const todoReducer = (state = initialState, action: IAction) => {
       ...state,
       {
         id: nextTodoId(state),
+        text: payload.todoText,
+        completed: false,
+        isComplete: false,
       },
     ];
   } else if (type === TOGGLED) {
