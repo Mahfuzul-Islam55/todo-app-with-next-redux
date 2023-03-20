@@ -5,6 +5,7 @@ export const initialState: IInitialState[] = [
     id: 1,
     text: "Learn Next.js",
     completed: true,
+    color: "green",
   },
   {
     id: 2,

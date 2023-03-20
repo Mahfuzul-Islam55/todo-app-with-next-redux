@@ -37,14 +37,14 @@ const todoReducer = (state = initialState, action: IAction) => {
       };
     });
   } else if (type === COLORSELECTED) {
-    const { todoId } = action.payload;
+    const { todoId, color } = action.payload;
     return state.map((todo) => {
       if (todo.id !== todoId) {
         return todo;
       }
       return {
         ...todo,
-        color: todo.color,
+        color: color,
       };
     });
   } else if (type === DELETED) {
