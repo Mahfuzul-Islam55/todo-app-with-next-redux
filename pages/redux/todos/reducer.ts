@@ -1,6 +1,7 @@
 import {
   ADDED,
   ALLCOMPLETED,
+  ALLDONE,
   CLEARCOMPLETED,
   COLORSELECTED,
   DELETED,
@@ -54,15 +55,23 @@ const todoReducer = (state = initialState, action: IAction) => {
   } else if (type === DELETED) {
     const { todoId } = action.payload;
     return state.filter((todo) => todo.id !== todoId);
+  } else if (type === CLEARCOMPLETED) {
+    console.log("clear ", state);
+    return state.filter((todo) => !todo.isComplete);
+  } else if (type === ALLDONE) {
+    return state.map((todo) => {
+      return {
+        ...todo,
+        isComplete: true,
+        completed: true,
+      };
+    });
   } else if (ALLCOMPLETED) {
     return state.map((todo) => {
       return {
         ...todo,
-        completed: true,
       };
     });
-  } else if (type === CLEARCOMPLETED) {
-    return state.filter((todo) => !todo.completed);
   }
 };
 

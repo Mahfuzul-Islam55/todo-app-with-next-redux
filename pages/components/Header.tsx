@@ -4,7 +4,7 @@ import doubleTick from "../images/double-tick.png";
 import notes from "../images/notes.png";
 import plus from "../images/plus.png";
 import { useDispatch } from "react-redux";
-import { added } from "../redux/todos/actions";
+import { added, allCompleted, clearCompleted } from "../redux/todos/actions";
 const Header = () => {
   const [input, setInput] = useState<string>("");
   const dispatch = useDispatch();
@@ -17,6 +17,14 @@ const Header = () => {
     e.preventDefault();
     dispatch(added(input));
     setInput("");
+  };
+
+  const completeHandler = () => {
+    dispatch(allCompleted());
+  };
+
+  const clearHandler = () => {
+    dispatch(clearCompleted());
   };
   return (
     <div>
@@ -61,9 +69,11 @@ const Header = () => {
             width={500}
             height={500}
           />
-          <span>Complete All Tasks</span>
+          <span onClick={completeHandler}>Complete All Tasks</span>
         </li>
-        <li className="cursor-pointer">Clear completed</li>
+        <li className="cursor-pointer" onClick={clearHandler}>
+          Clear completed
+        </li>
       </ul>
     </div>
   );

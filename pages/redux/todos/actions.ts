@@ -1,6 +1,7 @@
 import {
   ADDED,
   ALLCOMPLETED,
+  ALLDONE,
   CLEARCOMPLETED,
   COLORSELECTED,
   DELETED,
@@ -40,7 +41,7 @@ export const deleted = (todoId: number) => {
 
 export const allCompleted = () => {
   return {
-    type: ALLCOMPLETED,
+    type: ALLDONE,
   };
 };
 
