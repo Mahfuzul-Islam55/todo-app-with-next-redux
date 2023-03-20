@@ -1,7 +1,7 @@
 export interface IInitialState {
   status?: string;
   colors: Array<string>;
-  changeType?: boolean;
+  changeType?: string;
 }
 
 export interface IPayload {
